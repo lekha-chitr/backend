@@ -11,8 +11,22 @@
     "debug": "~2.6.9",
     "dotenv": "^6.2.0",
     "express": "~4.16.0",
+    "husky": "^1.2.1",
+    "lint-staged": "^8.1.0",
     "mongoose": "^5.4.0",
     "morgan": "~1.9.0",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "prettier": "^1.15.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+      "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+        "prettier --single-quote --write",
+        "git add"
+      ]
   }
 }
